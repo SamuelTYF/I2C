@@ -45,7 +45,8 @@ void LCD_WriteReg(uint8_t Reg)
 {
     LCD_DC_0;
     LCD_CS_0;
-    SPI4W_Write_Byte(Reg);
+    SPI4W_Write_Byte(Reg>>8);
+    SPI4W_Write_Byte(Reg&0xFF);
     LCD_CS_1;
 }
 

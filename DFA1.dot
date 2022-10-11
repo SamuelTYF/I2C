@@ -1,0 +1,13 @@
+digraph DFA1{
+node_0 [style=filled fillcolor=red shape=ellipse label="Mode 0\nIdle"];
+node_1 [style=filled fillcolor=white shape=ellipse label="Mode 1\nFirst Sample"];
+node_2 [style=filled fillcolor=white shape=ellipse label="Mode 2\nSampling"];
+node_3 [style=filled fillcolor=white shape=ellipse label="Mode 3\nEnd"];
+
+node_0 -> node_1 [label="Start Sampling"]
+node_1 -> node_1 [label="Same Value"]
+node_1 -> node_2 [label="Different Value"]
+node_2 -> node_2 [label="Length<4096"]
+node_2 -> node_3 [label="Length=4096"]
+node_3 -> node_0 [label="Data Process"]
+}

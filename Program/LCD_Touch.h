@@ -85,7 +85,7 @@ public:
 		YPoint=y;
 		ScanCount++;
 	}
-  //更新事件类型
+  	//更新事件类型
 	void Lock()
 	{
 		if(ScanCount<10)Type=Click;

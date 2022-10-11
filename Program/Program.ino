@@ -307,6 +307,7 @@ void ParseBit()
 //初始化
 void setup()
 {
+
   //开启I2C Slaver
   Wire.begin(0x10);
   Wire.onReceive(receive);
@@ -314,6 +315,7 @@ void setup()
 
   //LCD初始化
   System_Init();
+
   SetTimer();
   SetTimer4(1599);
   sampleInfo = GetSampleInfo(sizeof(char), 4096);

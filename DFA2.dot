@@ -1,0 +1,28 @@
+digraph DFA2{
+node_0 [style=filled fillcolor=red shape=ellipse label="Mode 0\n Idle"];
+node_1 [style=filled fillcolor=white shape=ellipse label="Mode 1\n Start"];
+node_2 [style=filled fillcolor=white shape=ellipse label="Mode 2\n High 1"];
+node_3 [style=filled fillcolor=white shape=ellipse label="Mode 3\n Low 1"];
+node_4 [style=filled fillcolor=white shape=ellipse label="Mode 4\n High 0"];
+node_5 [style=filled fillcolor=white shape=ellipse label="Mode 5\n Low 0"];
+node_6 [style=filled fillcolor=white shape=ellipse label="Mode 6\n End"];
+
+node_0 -> node_0 [label="SCL=1\nSDA=1"]
+node_0 -> node_1 [label="SCL=1\nSDA=0"]
+node_1 -> node_1 [label="SCL=1\nSDA=0"]
+node_1 -> node_3 [label="SCL=0\nSDA=1"]
+node_3 -> node_3 [label="SCL=0\nSDA=1"]
+node_1 -> node_5 [label="SCL=0\nSDA=0"]
+node_5 -> node_5 [label="SCL=0\nSDA=0"]
+node_5 -> node_4 [label="SCL=1\nSDA=0"]
+node_4 -> node_4 [label="SCL=1\nSDA=0"]
+node_4 -> node_5 [label="SCL=0\nSDA=0"]
+node_4 -> node_3 [label="SCL=0\nSDA=1"]
+node_3 -> node_2 [label="SCL=1\nSDA=1"]
+node_2 -> node_2 [label="SCL=1\nSDA=1"]
+node_2 -> node_5 [label="SCL=0\nSDA=0"]
+node_2 -> node_3 [label="SCL=0\nSDA=1"]
+node_2 -> node_6 [label="SCL=1\nSDA=0"]
+node_5 -> node_3 [label="SCL=0\nSDA=1"]
+node_3 -> node_5 [label="SCL=0\nSDA=0"]
+}
